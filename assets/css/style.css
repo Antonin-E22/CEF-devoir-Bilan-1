@@ -1,0 +1,52 @@
+/* Définition des couleurs officielles du projet */
+:root {
+  --color-turquoise: #17abb3;    /* Turquoise : titres, header, footer, accents */
+  --color-gris-fonce: #333333;       /* Gris foncé : texte principal */
+  --color-gris-clair: #e3e3e3;     /* Gris clair : bordures et étoiles vides */
+  --color-gris-pale: #f5f5f5;   /* Gris très pâle : fond au survol des blocs */
+  --color-white: #ffffff;      /* Blanc : fond container et textes header/footer */
+}
+
+/* Définition de Raleway en style normal */
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Regular.ttf') format('truetype');
+  font-weight: normal;  /* correspond à la graisse 400 */
+  font-style: normal;
+}
+
+/* Définition de Raleway en gras */
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Bold.ttf') format('truetype');
+  font-weight: bold;    /* correspond à la graisse 700 */
+  font-style: normal;
+}
+
+/* Définition de Raleway en italique */
+@font-face {
+  font-family: 'Raleway';
+  src: url('../fonts/Raleway-Italic.ttf') format('truetype');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Application de Raleway sur tout le corps du document */
+body {
+  font-family: 'Raleway', sans-serif;
+
+}
+
+h1,h2,h3 {
+  font-family: 'Lato' , sans-serif;
+  color: var(--color-turquoise);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.main {
+  width: 1160px;
+  margin: 0px auto;
+}
