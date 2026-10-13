@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,9 +13,48 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
+
 <body>
     <div class="main">
+        <header>
+            <!-- Bloc 1 (gauche) : Photo de profil cliquable -->
+            <div class="header__photo">
+                <!-- Lien vers l'image> -->
+                <a class="photo__link" href="./assets/images/Photo-profile.jpg" target="_blank">
+                    <img class="photo__profil" src="./assets/images/Photo-profile.jpg" alt="Photo de profil">
+                </a>
+            </div>
 
+            <div class="header__content">
+                <!-- Bloc 2 (droite) : Informations personnelles et coordonnées -->
+                <div class="header__name">
+                    <!-- Titre principal : Nom et prénom -->
+                    <h1>Prénom Nom</h1>
+
+                    <!-- Métier visé -->
+                    <h2>Développeur Web et Web Mobile</h2>
+                </div>
+                <ul class="header__contact">
+                    <li class="contact__item">
+                        <img class="contact__icon" src="./assets/images/envelope-regular-full.svg" alt="mail">
+                        <a href="mailto:mailto@mail.com">Mail</a>
+                    </li>
+                    <li class="contact__item">
+                        <img class="contact__icon" src="./assets/images/house-regular-full.svg" alt="adresse">
+                        <a href="https://www.google.com/maps/place/22000+Saint-Brieuc/@48.5108189,-2.786314,14z/data=!3m1!4b1!4m6!3m5!1s0x480e1d4129562b03:0x40ca5cd36e62a40!8m2!3d48.5124561!4d-2.7678727!16zL20vMDJkeXc5?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Adresse</a>
+                    </li>
+                    <li class="contact__item">
+                        <img class="contact__icon" src="./assets/images/mobile-screen-solid-full.svg" alt="phone">
+                        <a href="tel:0602030405">Téléphone</a>
+                    </li>
+                    <li class="contact__item">
+                        <img class="contact__icon" src="./assets/images/car-rear-solid-full.svg" alt="license">
+                        <span>Permis B</span>
+                    </li>
+                </ul>
+            </div>
+        </header>
     </div>
 </body>
+
 </html>

@@ -1,52 +1,135 @@
 /* Définition des couleurs officielles du projet */
 :root {
-  --color-turquoise: #17abb3;    /* Turquoise : titres, header, footer, accents */
-  --color-gris-fonce: #333333;       /* Gris foncé : texte principal */
-  --color-gris-clair: #e3e3e3;     /* Gris clair : bordures et étoiles vides */
-  --color-gris-pale: #f5f5f5;   /* Gris très pâle : fond au survol des blocs */
-  --color-white: #ffffff;      /* Blanc : fond container et textes header/footer */
+    --color-turquoise: #17abb3; /* Turquoise : titres, header, footer, accents */
+    --color-gris-fonce: #333333; /* Gris foncé : texte principal */
+    --color-gris-clair: #e3e3e3; /* Gris clair : bordures et étoiles vides */
+    --color-gris-pale: #f5f5f5; /* Gris très pâle : fond au survol des blocs */
+    --color-white: #ffffff; /* Blanc : fond container et textes header/footer */
 }
 
 /* Définition de Raleway en style normal */
 @font-face {
-  font-family: 'Raleway';
-  src: url('../fonts/Raleway-Regular.ttf') format('truetype');
-  font-weight: normal;  /* correspond à la graisse 400 */
-  font-style: normal;
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Regular.ttf") format("truetype");
+    font-weight: normal; /* correspond à la graisse 400 */
+    font-style: normal;
 }
 
 /* Définition de Raleway en gras */
 @font-face {
-  font-family: 'Raleway';
-  src: url('../fonts/Raleway-Bold.ttf') format('truetype');
-  font-weight: bold;    /* correspond à la graisse 700 */
-  font-style: normal;
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Bold.ttf") format("truetype");
+    font-weight: bold; /* correspond à la graisse 700 */
+    font-style: normal;
 }
 
 /* Définition de Raleway en italique */
 @font-face {
-  font-family: 'Raleway';
-  src: url('../fonts/Raleway-Italic.ttf') format('truetype');
-  font-weight: normal;
-  font-style: italic;
+    font-family: "Raleway";
+    src: url("../fonts/Raleway-Italic.ttf") format("truetype");
+    font-weight: normal;
+    font-style: italic;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Lato", sans-serif;
 }
 
 /* Application de Raleway sur tout le corps du document */
 body {
-  font-family: 'Raleway', sans-serif;
-
-}
-
-h1,h2,h3 {
-  font-family: 'Lato' , sans-serif;
-  color: var(--color-turquoise);
+    font-family: "Raleway", sans-serif;
+    margin: 0;
 }
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 .main {
-  width: 1160px;
-  margin: 0px auto;
+    width: 1160px;
+    margin: 0px auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 30px 0;
+    background-color: var(--color-turquoise);
+    color: var(--color-white);
+}
+
+.header__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+}
+
+.photo__link:hover {
+    cursor: zoom-in;
+}
+
+.photo__profil {
+    border: 5px solid var(--color-gris-clair);
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+
+.header__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    gap: 20px;
+}
+
+.header__name {
+    text-align: center;
+}
+
+.header__name h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+
+.header__name h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.header__contact {
+    display: flex;
+    flex-wrap: wrap;
+    width: 280px;
+    gap: 15px 30px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: calc(50% - 15px);
+}
+
+.contact__item a {
+    color: var(--color-white);
+    text-decoration: none;
+}
+
+.contact__item a:hover {
+    text-decoration: underline;
+}
+
+.contact__icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
 }
