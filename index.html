@@ -5,56 +5,162 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <title>CV - Prénom NOM</title>
 
+    <!-- Police Lato (titres) chargée depuis Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
 
 <body>
-    <div class="main">
-        <header>
-            <!-- Bloc 1 (gauche) : Photo de profil cliquable -->
-            <div class="header__photo">
-                <!-- Lien vers l'image> -->
-                <a class="photo__link" href="./assets/images/Photo-profile.jpg" target="_blank">
-                    <img class="photo__profil" src="./assets/images/Photo-profile.jpg" alt="Photo de profil">
-                </a>
+    <!-- En-tête : photo à gauche, identité et coordonnées à droite -->
+    <header>
+        <!-- Photo de profil, cliquable pour l'afficher en grand -->
+        <div class="header__photo">
+            <a class="photo__link" href="./assets/images/Photo-profile.jpg" target="_blank">
+                <img class="photo__profil" src="./assets/images/Photo-profile.jpg" alt="Photo de profil">
+            </a>
+        </div>
+
+        <div class="header__content">
+            <!-- Nom et métier visé -->
+            <div class="header__name">
+                <h1>Prénom Nom</h1>
+                <h2>Développeur Web et Web Mobile</h2>
             </div>
 
-            <div class="header__content">
-                <!-- Bloc 2 (droite) : Informations personnelles et coordonnées -->
-                <div class="header__name">
-                    <!-- Titre principal : Nom et prénom -->
-                    <h1>Prénom Nom</h1>
+            <!-- Coordonnées : une icône suivie d'un texte par contact -->
+            <ul class="header__contact">
+                <li class="contact__item">
+                    <img class="contact__icon" src="./assets/images/envelope-regular-full.svg" alt="mail">
+                    <a href="mailto:mailto@mail.com">Mail</a>
+                </li>
+                <li class="contact__item">
+                    <img class="contact__icon" src="./assets/images/house-regular-full.svg" alt="adresse">
+                    <a href="https://www.google.com/maps/place/22000+Saint-Brieuc/@48.5108189,-2.786314,14z/data=!3m1!4b1!4m6!3m5!1s0x480e1d4129562b03:0x40ca5cd36e62a40!8m2!3d48.5124561!4d-2.7678727!16zL20vMDJkeXc5?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
+                        target="_blank">Adresse</a>
+                </li>
+                <li class="contact__item">
+                    <img class="contact__icon" src="./assets/images/mobile-screen-solid-full.svg" alt="phone">
+                    <a href="tel:0602030405">Téléphone</a>
+                </li>
+                <li class="contact__item">
+                    <img class="contact__icon" src="./assets/images/car-rear-solid-full.svg" alt="license">
+                    <span>Permis B</span>
+                </li>
+            </ul>
+        </div>
+    </header>
 
-                    <!-- Métier visé -->
-                    <h2>Développeur Web et Web Mobile</h2>
-                </div>
-                <ul class="header__contact">
-                    <li class="contact__item">
-                        <img class="contact__icon" src="./assets/images/envelope-regular-full.svg" alt="mail">
-                        <a href="mailto:mailto@mail.com">Mail</a>
-                    </li>
-                    <li class="contact__item">
-                        <img class="contact__icon" src="./assets/images/house-regular-full.svg" alt="adresse">
-                        <a href="https://www.google.com/maps/place/22000+Saint-Brieuc/@48.5108189,-2.786314,14z/data=!3m1!4b1!4m6!3m5!1s0x480e1d4129562b03:0x40ca5cd36e62a40!8m2!3d48.5124561!4d-2.7678727!16zL20vMDJkeXc5?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Adresse</a>
-                    </li>
-                    <li class="contact__item">
-                        <img class="contact__icon" src="./assets/images/mobile-screen-solid-full.svg" alt="phone">
-                        <a href="tel:0602030405">Téléphone</a>
-                    </li>
-                    <li class="contact__item">
-                        <img class="contact__icon" src="./assets/images/car-rear-solid-full.svg" alt="license">
-                        <span>Permis B</span>
-                    </li>
-                </ul>
+    <main>
+        <!-- Corps du CV : colonne latérale et colonne principale côte à côte -->
+        <div class="cv-body">
+
+            <!-- Colonne latérale -->
+            <aside class="cv-sidebar">
+
+                <!-- Compétences : niveau noté de 1 à 5 étoiles -->
+                <section>
+                    <h2>Compétences</h2>
+                    <hr>
+                    <ul class="skills__list">
+                        <li class="skill">
+                            <span class="skill__name">HTML</span>
+                            <div class="skill__stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                            </div>
+                        </li>
+
+                        <li class="skill">
+                            <span class="skill__name">CSS</span>
+                            <div class="skill__stars">
+                                <span class="star">★</span>
+                                <span class="star">★</span>
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                            </div>
+                        </li>
+
+                        <li class="skill">
+                            <span class="skill__name">Javascript</span>
+                            <div class="skill__stars">
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                            </div>
+                        </li>
+
+                        <li class="skill">
+                            <span class="skill__name">PHP</span>
+                            <div class="skill__stars">
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                                <span class="star">☆</span>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Langues : nom et niveau -->
+                <section>
+                    <h2>Langues</h2>
+                    <hr>
+                    <ul class="languages__list">
+                        <li class="language__item">
+                            <span class="language__name">Français</span>
+                            <span class="language__level">Langue maternelle</span>
+                        </li>
+
+                        <li class="language__item">
+                            <span class="language__name">Anglais</span>
+                            <span class="language__level">couramment</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <!-- Qualités -->
+                <section>
+                    <h2>Qualités</h2>
+                    <hr>
+                    <ul class="qualities__list">
+                        <li>Esprit d'équipe</li>
+                        <li>Autonomie</li>
+                        <li>Organisation</li>
+                        <li>Créativité</li>
+                    </ul>
+                </section>
+
+                <!-- Centres d'intérêt -->
+                <section>
+                    <h2>Centres d'intérêt</h2>
+                    <hr>
+                    <ul class="interests__list">
+                        <li>Jeux-video</li>
+                        <li>Catch</li>
+                        <li>Cuisine</li>
+                    </ul>
+                </section>
+            </aside>
+
+            <!-- Colonne principale : profil, formations, stages et expériences -->
+            <div class="cv-content">
             </div>
-        </header>
-    </div>
+        </div>
+    </main>
 </body>
 
 </html>

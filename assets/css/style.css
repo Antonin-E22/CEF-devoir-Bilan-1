@@ -1,29 +1,27 @@
-/* Définition des couleurs officielles du projet */
+/* Couleurs du projet (palette du brief) */
 :root {
-    --color-turquoise: #17abb3; /* Turquoise : titres, header, footer, accents */
-    --color-gris-fonce: #333333; /* Gris foncé : texte principal */
-    --color-gris-clair: #e3e3e3; /* Gris clair : bordures et étoiles vides */
-    --color-gris-pale: #f5f5f5; /* Gris très pâle : fond au survol des blocs */
-    --color-white: #ffffff; /* Blanc : fond container et textes header/footer */
+    --color-turquoise: #17abb3; /* Titres, header, étoiles, puces */
+    --color-gris-fonce: #333333; /* Texte principal */
+    --color-gris-clair: #e3e3e3; /* Traits sous les titres, bordure de la photo */
+    --color-gris-pale: #f5f5f5; /* Fond de la colonne latérale */
+    --color-white: #ffffff; /* Fond du CV, textes du header */
 }
 
-/* Définition de Raleway en style normal */
+/* Police Raleway (texte courant) : normal, gras et italique */
 @font-face {
     font-family: "Raleway";
     src: url("../fonts/Raleway-Regular.ttf") format("truetype");
-    font-weight: normal; /* correspond à la graisse 400 */
+    font-weight: normal; /* Graisse 400 */
     font-style: normal;
 }
 
-/* Définition de Raleway en gras */
 @font-face {
     font-family: "Raleway";
     src: url("../fonts/Raleway-Bold.ttf") format("truetype");
-    font-weight: bold; /* correspond à la graisse 700 */
+    font-weight: bold; /* Graisse 700 */
     font-style: normal;
 }
 
-/* Définition de Raleway en italique */
 @font-face {
     font-family: "Raleway";
     src: url("../fonts/Raleway-Italic.ttf") format("truetype");
@@ -31,27 +29,31 @@
     font-style: italic;
 }
 
+/* ----- Styles généraux ----- */
+
+/* Titres en Lato */
 h1,
 h2,
 h3 {
     font-family: "Lato", sans-serif;
 }
 
-/* Application de Raleway sur tout le corps du document */
+/* Texte courant en Raleway gris foncé, page centrée sur 1160px */
 body {
     font-family: "Raleway", sans-serif;
-    margin: 0;
-}
-
-* {
-    box-sizing: border-box;
-}
-
-.main {
+    color: var(--color-gris-fonce);
     width: 1160px;
     margin: 0px auto;
 }
 
+/* Le padding et la bordure sont inclus dans la largeur des éléments */
+* {
+    box-sizing: border-box;
+}
+
+/* ----- Header ----- */
+
+/* Bandeau turquoise : photo et identité alignées sur une ligne */
 header {
     display: flex;
     align-items: center;
@@ -60,6 +62,7 @@ header {
     color: var(--color-white);
 }
 
+/* Zone de la photo : 30% de la largeur, comme la colonne latérale */
 .header__photo {
     display: flex;
     justify-content: center;
@@ -67,10 +70,12 @@ header {
     width: 30%;
 }
 
+/* Curseur loupe au survol de la photo */
 .photo__link:hover {
     cursor: zoom-in;
 }
 
+/* Photo ronde avec bordure gris clair */
 .photo__profil {
     border: 5px solid var(--color-gris-clair);
     border-radius: 50%;
@@ -78,6 +83,7 @@ header {
     width: 150px;
 }
 
+/* Zone identité : occupe le reste de la largeur, contenu centré en colonne */
 .header__content {
     display: flex;
     flex-direction: column;
@@ -102,6 +108,7 @@ header {
     margin: 0;
 }
 
+/* Coordonnées sur deux colonnes, sans puces */
 .header__contact {
     display: flex;
     flex-wrap: wrap;
@@ -112,6 +119,7 @@ header {
     padding: 0;
 }
 
+/* Un contact : icône et texte alignés, deux contacts par ligne */
 .contact__item {
     display: flex;
     align-items: center;
@@ -119,6 +127,7 @@ header {
     width: calc(50% - 15px);
 }
 
+/* Liens blancs, soulignés uniquement au survol */
 .contact__item a {
     color: var(--color-white);
     text-decoration: none;
@@ -128,8 +137,114 @@ header {
     text-decoration: underline;
 }
 
+/* Icônes en 20px, passées en blanc */
 .contact__icon {
     width: 20px;
     height: 20px;
     filter: brightness(0) invert(1);
+}
+
+/* ----- Corps du CV ----- */
+
+/* Colonne latérale et colonne principale côte à côte, sur fond blanc */
+.cv-body {
+    display: flex;
+    background-color: var(--color-white);
+}
+
+/* ----- Colonne latérale ----- */
+
+/* 30% de la largeur, fond gris pâle, rubriques empilées */
+.cv-sidebar {
+    width: 30%;
+    padding: 40px 50px; /* 40px en haut et en bas, 50px à gauche et à droite */
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-gris-pale);
+}
+
+/* Titres de rubrique : turquoise, sans gras */
+.cv-sidebar h2 {
+    color: var(--color-turquoise);
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+/* Trait fin sous les titres */
+hr {
+    border: none; /* Supprime le trait en relief par défaut */
+    border-top: 1px solid var(--color-gris-clair);
+    margin: 0;
+}
+
+/* Listes des compétences et des langues : lignes empilées, espacées de 12px */
+.languages__list,
+.skills__list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style-type: none; /* Pas de puces */
+    padding: 0; /* Supprime le retrait par défaut des listes */
+    margin-top: 20px; /* Espace sous le trait */
+}
+
+/* Une compétence : nom à gauche, étoiles à droite */
+.skill {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.skill__name {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+/* Les 5 étoiles alignées */
+.skill__stars {
+    display: flex;
+    gap: 4px;
+    line-height: 1; /* La ligne prend la hauteur des étoiles, sans espace en plus */
+}
+
+.star {
+    color: var(--color-turquoise);
+    font-size: 1.1rem;
+}
+
+/* Listes des qualités et des centres d'intérêt : puces carrées */
+.qualities__list,
+.interests__list {
+    padding-left: 25px; /* Place pour les puces */
+    list-style-type: square;
+}
+
+/* Puces turquoise */
+.qualities__list li::marker,
+.interests__list li::marker {
+    color: var(--color-turquoise);
+    font-size: 1.5rem;
+}
+
+/* Une langue : nom à gauche, niveau à droite */
+.language__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.language__name {
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+
+.language__level {
+    font-size: 0.95rem;
+}
+
+/* ----- Colonne principale ----- */
+
+/* 70% de la largeur, le reste à côté de la colonne latérale */
+.cv-content {
+    width: 70%;
 }
