@@ -2,7 +2,7 @@
 :root {
     --color-turquoise: #17abb3; /* Titres, header, étoiles, puces */
     --color-gris-fonce: #333333; /* Texte principal */
-    --color-gris-clair: #e3e3e3; /* Traits sous les titres, bordure de la photo */
+    --color-gris-clair: #e3e3e3; /* Traits sous les titres, bordure de la photo, fond au survol */
     --color-gris-pale: #f5f5f5; /* Fond de la colonne latérale */
     --color-white: #ffffff; /* Fond du CV, textes du header */
 }
@@ -49,6 +49,16 @@ body {
 /* Le padding et la bordure sont inclus dans la largeur des éléments */
 * {
     box-sizing: border-box;
+}
+
+/* Titres de rubrique des deux colonnes : turquoise, sans gras.
+   On cible les deux colonnes et pas tous les h2 : le sous-titre du header
+   est aussi un h2 et doit rester blanc et gras. */
+.cv-content h2,
+.cv-sidebar h2 {
+    color: var(--color-turquoise);
+    font-weight: normal;
+    margin-bottom: 10px;
 }
 
 /* ----- Header ----- */
@@ -163,13 +173,6 @@ header {
     background-color: var(--color-gris-pale);
 }
 
-/* Titres de rubrique : turquoise, sans gras */
-.cv-sidebar h2 {
-    color: var(--color-turquoise);
-    font-weight: normal;
-    margin-bottom: 10px;
-}
-
 /* Trait fin sous les titres */
 hr {
     border: none; /* Supprime le trait en relief par défaut */
@@ -244,7 +247,76 @@ hr {
 
 /* ----- Colonne principale ----- */
 
-/* 70% de la largeur, le reste à côté de la colonne latérale */
+/* Colonne principale : 70% de la largeur.
+   L'espace entre les rubriques vient de la marge naturelle des titres h2,
+   comme dans la colonne latérale. */
 .cv-content {
     width: 70%;
+    padding: 40px 40px 40px 30px; /* Marges intérieures pour aérer le contenu */
+}
+
+/* Paragraphes de la rubrique Profil */
+.profile p {
+    line-height: 1.3; /* Hauteur de ligne pour une lecture confortable */
+    text-align: justify; /* Exigence du brief : texte aligné à gauche et à droite */
+    text-indent: 25px; /* Exigence du brief : retrait sur la première ligne */
+    margin-bottom: 0; /* Pas d'espace sous les paragraphes */
+}
+
+/* Paragraphe qui suit directement un autre paragraphe : pas d'espace
+   au-dessus non plus, pour que les paragraphes se suivent sans espace
+   comme sur la maquette. Le 1er garde sa marge du haut (espace sous le trait). */
+.profile p + p {
+    margin-top: 0;
+}
+
+/* Liste des formations, stages ou expériences.
+   Les blocs s'empilent d'eux-mêmes : c'est leur padding qui les espace. */
+.timeline__list {
+    margin-top: 10px; /* Espace sous le trait */
+}
+
+/* Une ligne : titre et sous-titre à gauche, date à droite */
+.timeline__item {
+    display: flex;
+    justify-content: space-between; /* Pousse les infos à gauche et la date à droite */
+    align-items: flex-start; /* Aligne la date sur le haut de la ligne */
+    /* Au repos : rien sur les côtés, le texte est aligné sur le titre de la rubrique.
+       10px en haut et en bas : espace entre les blocs, et le fond du survol ne colle pas au texte. */
+    padding: 10px 0;
+    border-left: 0px solid var(--color-turquoise); /* Barre présente mais invisible au repos (largeur 0) */
+    /* Transition douce : le fond, la barre et le décalage du texte */
+    transition:
+        background-color 0.2s ease,
+        border-left-width 0.2s ease,
+        padding 0.2s ease;
+}
+
+/* Effet n°1 : fond gris, barre turquoise à gauche, contenu décalé vers l'intérieur */
+.timeline__item:hover {
+    background-color: var(--color-gris-clair);
+    border-left-width: 5px;
+    padding: 10px; /* Même hauteur qu'au repos : seuls les côtés changent */
+}
+
+/* Intitulé : diplôme, stage ou poste */
+.timeline-item__title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-gris-fonce);
+    margin: 0;
+}
+
+/* Établissement ou organisme */
+.timeline-item__subtitle {
+    font-size: 0.85rem;
+    font-style: italic; /* Raleway en italique comme prévu au brief */
+    margin: 3px 0 0 0;
+}
+
+/* Date calée à droite en couleur turquoise */
+.timeline-item__date {
+    font-size: 0.95rem;
+    color: var(--color-turquoise);
+    white-space: nowrap; /* Empêche la date de se couper sur 2 lignes */
 }
