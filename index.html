@@ -10,9 +10,7 @@
     <!-- Police Lato (titres) chargée depuis Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="icon" type="image/x-icon" href="./assets/images/favicon.ico">
 </head>
@@ -42,8 +40,7 @@
                 </li>
                 <li class="contact__item">
                     <img class="contact__icon" src="./assets/images/house-regular-full.svg" alt="adresse">
-                    <a href="https://www.google.com/maps/place/22000+Saint-Brieuc/@48.5108189,-2.786314,14z/data=!3m1!4b1!4m6!3m5!1s0x480e1d4129562b03:0x40ca5cd36e62a40!8m2!3d48.5124561!4d-2.7678727!16zL20vMDJkeXc5?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D"
-                        target="_blank">Adresse</a>
+                    <a href="https://www.google.com/maps/place/22000+Saint-Brieuc/@48.5108189,-2.786314,14z/data=!3m1!4b1!4m6!3m5!1s0x480e1d4129562b03:0x40ca5cd36e62a40!8m2!3d48.5124561!4d-2.7678727!16zL20vMDJkeXc5?entry=ttu&g_ep=EgoyMDI2MTAwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Adresse</a>
                 </li>
                 <li class="contact__item">
                     <img class="contact__icon" src="./assets/images/mobile-screen-solid-full.svg" alt="phone">
@@ -183,12 +180,12 @@
 
                         <!-- Formation 1 -->
                         <div class="timeline__item">
-                            <!-- Titre et sous-titre regroupés : la date se place à droite de ce bloc -->
+                            <!-- Intitulé et organisme, la date est à droite -->
                             <div>
                                 <h3 class="timeline-item__title">Titre Professionnel DWWM</h3>
                                 <p class="timeline-item__subtitle">Centre Européen de Formation</p>
                             </div>
-                            <span class="timeline-item__date">2026/2027</span>
+                            <span class="timeline-item__date"><time datetime="2026">2026</time>/<time datetime="2027">2027</time></span>
                         </div>
                     </div>
                 </section>
@@ -236,6 +233,21 @@
             </div>
         </div>
     </main>
+    <!-- Pied de page : réseaux et date de mise à jour -->
+    <footer>
+        <div class="footer__socials">
+            <a href="https://linkedin.com" target="_blank">
+                <img class="social__icon" src="./assets/images/linkedin.svg" alt="LinkedIn">
+            </a>
+            <a href="https://github.com/Antonin-E22" target="_blank">
+                <img class="social__icon" src="./assets/images/github.svg" alt="GitHub">
+            </a>
+            <a href="https://instagram.com" target="_blank">
+                <img class="social__icon" src="./assets/images/instagram.svg" alt="Instagram">
+            </a>
+        </div>
+        <p class="footer__update">Mis à jour le : <time datetime="2026-10-22">22/10/2026</time></p>
+    </footer>
 </body>
 
 </html>

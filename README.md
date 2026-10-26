@@ -1,19 +1,30 @@
-# CV en ligne - Développeur Web et Web Mobile
+# CV en ligne
 
-Ce projet est la réalisation d'un CV en ligne responsive et sémantique, développé dans le cadre de la formation Développeur Web et Web Mobile (CEF). Il répond au scénario de candidature pour une start-up dans la GreenTech.
+CV en ligne réalisé dans le cadre de la formation Développeur Web et Web Mobile du Centre Européen de Formation.
 
-## 🛠️ Technologies utilisées
+## Technologies
 
-- **HTML5** : balisage sémantique (`<header>`, `<main>`, `<aside>`, `<footer>`)
-- **CSS3** : mise en page réalisée avec **Flexbox** (sans framework)
-- **Typographie** : police *Lato* via Google Fonts et *Raleway* via `@font-face`
-- **Git & GitHub** : gestion de version avec découpage par branches et *Pull Requests*
+- HTML5
+- CSS3 avec Flexbox
+- Polices : Lato (Google Fonts) et Raleway (`@font-face`)
+- Git et GitHub
 
-## 📁 Structure du projet
+## Structure du projet
 
 ```text
-├── css/
-│   └── style.css       # Feuilles de styles du CV
-├── images/             # Photo de profil, favicon et icônes
-├── index.html          # Page principale du CV
-└── README.md           # Présentation du projet
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── fonts/
+│   └── images/
+├── index.html
+└── README.md
+```
+
+## Méthode de travail
+
+Le travail a été découpé en issues. Chaque issue a sa propre branche, puis une pull request avant d'être fusionnée dans la branche principale.
+
+## Voir le CV
+
+Ouvrir le fichier `index.html` dans un navigateur.
