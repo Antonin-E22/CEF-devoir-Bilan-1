@@ -51,9 +51,8 @@ body {
     box-sizing: border-box;
 }
 
-/* Titres de rubrique des deux colonnes : turquoise, sans gras.
-   On cible les deux colonnes et pas tous les h2 : le sous-titre du header
-   est aussi un h2 et doit rester blanc et gras. */
+/* Titres de rubrique : turquoise, sans gras.
+   Seuls les h2 des deux colonnes sont ciblés : celui du header reste blanc et gras. */
 .cv-content h2,
 .cv-sidebar h2 {
     color: var(--color-turquoise);
@@ -106,12 +105,14 @@ header {
     text-align: center;
 }
 
+/* Nom */
 .header__name h1 {
     font-size: 3rem;
     font-weight: 700;
     margin: 0 0 5px 0;
 }
 
+/* Métier visé */
 .header__name h2 {
     font-size: 1.4rem;
     font-weight: 700;
@@ -121,7 +122,7 @@ header {
 /* Coordonnées sur deux colonnes, sans puces */
 .header__contact {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap; /* Passage à la ligne après deux contacts */
     width: 280px;
     gap: 15px 30px;
     list-style-type: none;
@@ -147,11 +148,11 @@ header {
     text-decoration: underline;
 }
 
-/* Icônes en 20px, passées en blanc */
+/* Icônes de contact */
 .contact__icon {
     width: 20px;
     height: 20px;
-    filter: brightness(0) invert(1);
+    filter: brightness(0) invert(1); /* Passe l'icône en blanc */
 }
 
 /* ----- Corps du CV ----- */
@@ -198,6 +199,7 @@ hr {
     align-items: center;
 }
 
+/* Nom de la compétence */
 .skill__name {
     font-weight: 700;
     font-size: 0.95rem;
@@ -207,9 +209,10 @@ hr {
 .skill__stars {
     display: flex;
     gap: 4px;
-    line-height: 1; /* La ligne prend la hauteur des étoiles, sans espace en plus */
+    line-height: 1; /* Pas d'espace en plus autour des étoiles */
 }
 
+/* Une étoile */
 .star {
     color: var(--color-turquoise);
     font-size: 1.1rem;
@@ -236,42 +239,40 @@ hr {
     align-items: center;
 }
 
+/* Nom de la langue */
 .language__name {
     font-weight: 700;
     font-size: 0.95rem;
 }
 
+/* Niveau */
 .language__level {
     font-size: 0.95rem;
 }
 
 /* ----- Colonne principale ----- */
 
-/* Colonne principale : 70% de la largeur.
-   L'espace entre les rubriques vient de la marge naturelle des titres h2,
-   comme dans la colonne latérale. */
+/* 70% de la largeur */
 .cv-content {
     width: 70%;
-    padding: 40px 40px 40px 30px; /* Marges intérieures pour aérer le contenu */
+    padding: 40px 40px 40px 30px; /* Haut, droite, bas, gauche */
 }
 
 /* Paragraphes de la rubrique Profil */
 .profile p {
-    line-height: 1.3; /* Hauteur de ligne pour une lecture confortable */
-    text-align: justify; /* Exigence du brief : texte aligné à gauche et à droite */
-    text-indent: 25px; /* Exigence du brief : retrait sur la première ligne */
-    margin-bottom: 0; /* Pas d'espace sous les paragraphes */
+    line-height: 1.3;
+    text-align: justify; /* Texte justifié */
+    text-indent: 25px; /* Retrait de la première ligne */
+    margin-bottom: 0;
 }
 
-/* Paragraphe qui suit directement un autre paragraphe : pas d'espace
-   au-dessus non plus, pour que les paragraphes se suivent sans espace
-   comme sur la maquette. Le 1er garde sa marge du haut (espace sous le trait). */
+/* Paragraphes collés comme sur la maquette.
+   Le premier garde sa marge du haut pour l'espace sous le trait. */
 .profile p + p {
     margin-top: 0;
 }
 
-/* Liste des formations, stages ou expériences.
-   Les blocs s'empilent d'eux-mêmes : c'est leur padding qui les espace. */
+/* Liste des formations, stages ou expériences */
 .timeline__list {
     margin-top: 10px; /* Espace sous le trait */
 }
@@ -279,24 +280,21 @@ hr {
 /* Une ligne : titre et sous-titre à gauche, date à droite */
 .timeline__item {
     display: flex;
-    justify-content: space-between; /* Pousse les infos à gauche et la date à droite */
-    align-items: flex-start; /* Aligne la date sur le haut de la ligne */
-    /* Au repos : rien sur les côtés, le texte est aligné sur le titre de la rubrique.
-       10px en haut et en bas : espace entre les blocs, et le fond du survol ne colle pas au texte. */
-    padding: 10px 0;
-    border-left: 0px solid var(--color-turquoise); /* Barre présente mais invisible au repos (largeur 0) */
-    /* Transition douce : le fond, la barre et le décalage du texte */
+    justify-content: space-between;
+    align-items: flex-start; /* Date alignée en haut */
+    padding: 10px 0; /* Pas de padding sur les côtés : texte aligné sur le titre */
+    border-left: 0px solid var(--color-turquoise); /* Barre invisible tant qu'il n'y a pas de survol */
     transition:
         background-color 0.2s ease,
         border-left-width 0.2s ease,
         padding 0.2s ease;
 }
 
-/* Effet n°1 : fond gris, barre turquoise à gauche, contenu décalé vers l'intérieur */
+/* Effet n°1 au survol : fond gris, barre turquoise, texte décalé */
 .timeline__item:hover {
     background-color: var(--color-gris-clair);
     border-left-width: 5px;
-    padding: 10px; /* Même hauteur qu'au repos : seuls les côtés changent */
+    padding: 10px; /* Même hauteur, seuls les côtés changent */
 }
 
 /* Intitulé : diplôme, stage ou poste */
@@ -310,13 +308,53 @@ hr {
 /* Établissement ou organisme */
 .timeline-item__subtitle {
     font-size: 0.85rem;
-    font-style: italic; /* Raleway en italique comme prévu au brief */
+    font-style: italic;
     margin: 3px 0 0 0;
 }
 
-/* Date calée à droite en couleur turquoise */
+/* Date en turquoise */
 .timeline-item__date {
     font-size: 0.95rem;
     color: var(--color-turquoise);
-    white-space: nowrap; /* Empêche la date de se couper sur 2 lignes */
+    white-space: nowrap; /* Date sur une seule ligne */
+}
+
+/* ----- Footer ----- */
+
+/* Bandeau turquoise : icônes au-dessus, date en dessous */
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 0;
+    background-color: var(--color-turquoise);
+    color: var(--color-white);
+}
+
+/* Icônes des réseaux sur une ligne */
+.footer__socials {
+    display: flex;
+    gap: 15px;
+}
+
+/* Icônes des réseaux */
+.social__icon {
+    display: block; /* Supprime l'espace vide sous l'image */
+    width: 21px;
+    height: 21px;
+    filter: brightness(0) invert(1); /* Passe l'icône en blanc */
+    transition: opacity 0.2s ease;
+}
+
+/* Effet n°3 : icône un peu transparente au survol */
+.social__icon:hover {
+    opacity: 0.7;
+}
+
+/* Date de mise à jour */
+.footer__update {
+    font-size: 0.75rem;
+    font-style: italic;
+    margin: 0;
 }
